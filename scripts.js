@@ -61,7 +61,7 @@ const players = [
 ];
 // Your final submission should have much more data than this, and
 // you should use more than just an array of strings to store it all.
-
+let sortAscending = false;
 // This function adds cards the page to display the data in the array
 function showCards(players) {
   const cardContainer = document.getElementById("card-container");
@@ -119,3 +119,24 @@ function filterByTeam() {
     showCards(filtered);
   }
 }
+
+
+  function sortByHomeRuns() {            
+    //make copy of the list, then sort list                                                                                                                                                                                                  sortAscending = !sortAscending;                                                                                                                                                                                                    
+                                                                                                                                                                                                                                       
+    const sorted = [...players].sort(function (a, b) {                                                                                                                                                                                 
+      if (sortAscending) {
+        return a.homeRuns - b.homeRuns;
+      } else {
+        return b.homeRuns - a.homeRuns;
+      }
+    });
+
+    if (sortAscending) {
+      document.getElementById("sort-btn").textContent = "Sort by HR: Most";
+    } else {
+      document.getElementById("sort-btn").textContent = "Sort by HR: Least";
+    }
+
+    showCards(sorted);
+  }
