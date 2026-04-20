@@ -11,7 +11,8 @@
     <header class="main-header">
       <h1 class="title">MLB Players</h1>
     </header>
-   <div class="filters">                                                                                                                                                                                                    
+   <div class="filters">
+      <input type="text" id="search_input" placeholder="Search players..." oninput="searchPlayers()" />
       <select id="team-filter" onchange="filterByTeam()">                                                                                                                                                                    
        <option value="All">All Teams</option>
        <option value="New York Yankees">New York Yankees</option>                                                                                                                                                           

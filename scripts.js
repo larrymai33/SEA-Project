@@ -122,7 +122,8 @@ function filterByTeam() {
 
 
   function sortByHomeRuns() {            
-    //make copy of the list, then sort list                                                                                                                                                                                                  sortAscending = !sortAscending;                                                                                                                                                                                                    
+    //make copy of the list, then sort list   
+    sortAscending = !sortAscending                                                                                                                                                                                              
                                                                                                                                                                                                                                        
     const sorted = [...players].sort(function (a, b) {                                                                                                                                                                                 
       if (sortAscending) {
@@ -140,3 +141,16 @@ function filterByTeam() {
 
     showCards(sorted);
   }
+
+
+
+
+  function searchPlayers() {
+  const query = document.getElementById("search_input").value.toLowerCase();
+
+  const results = players.filter(function (player) {
+    return player.name.toLowerCase().includes(query);
+  });
+
+  showCards(results);
+}
