@@ -11,6 +11,14 @@
     <header class="main-header">
       <h1 class="title">MLB Players</h1>
     </header>
+   <div class="filters">                                                                                                                                                                                                    
+      <select id="team-filter" onchange="filterByTeam()">                                                                                                                                                                    
+       <option value="All">All Teams</option>
+       <option value="New York Yankees">New York Yankees</option>                                                                                                                                                           
+        <option value="Los Angeles Dodgers">Los Angeles Dodgers</option>                                                                                                                                                     
+       <option value="Kansas City Royals">Kansas City Royals</option>                                                                                                                                                       
+     </select>                                                                                                                                                                                                              
+    </div>     
     <div id="card-container"></div>
     <div class="card" style="display: none">
       <div class="card-content">

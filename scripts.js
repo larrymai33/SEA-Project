@@ -107,7 +107,15 @@ function quoteAlert() {
   );
 }
 
-function removeLastCard() {
-  titles.pop(); // Remove last item in titles array
-  showCards(); // Call showCards again to refresh
+function filterByTeam() {
+  const selectedTeam = document.getElementById("team-filter").value;
+
+  if (selectedTeam === "All") {
+    showCards(players);
+  } else {
+    const filtered = players.filter(function (player) {
+      return player.team === selectedTeam;
+    });
+    showCards(filtered);
+  }
 }
