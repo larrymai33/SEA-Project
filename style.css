@@ -337,6 +337,44 @@ body {
   margin-top: 5px;
 }
 
+.insights-grid {
+  margin-bottom: 24px;
+}
+
+.chart-section-wide {
+  max-width: 1000px;
+  margin: 0 auto 50px;
+}
+
+.chart-scroll {
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.chart-section-wide .chart-scroll {
+  display: flex;
+  justify-content: center;
+}
+
+.chart-section-wide .chart-scroll .bar-chart {
+  width: fit-content;
+  min-width: 0;
+}
+
+.bar-chart-dense {
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.bar-chart-dense .bar {
+  width: 30px;
+}
+
+.bar-chart-dense .bar-label {
+  max-width: 48px;
+  font-size: 0.56em;
+}
+
 /* ── Batter Compass ── */
 .compass-section {
   max-width: 820px;
@@ -431,6 +469,30 @@ body {
 .q-bottom-left .quadrant-label { color: var(--text-subtle); }
 .q-bottom-right .quadrant-label { color: #1a7a1a; }
 
+.speed-compass .q-top-left {
+  background: rgba(26,122,26,0.05);
+}
+
+.speed-compass .q-top-right {
+  background: rgba(0,48,135,0.06);
+}
+
+.speed-compass .q-bottom-right {
+  background: rgba(213,0,50,0.05);
+}
+
+.speed-compass .q-top-left .quadrant-label {
+  color: #1a7a1a;
+}
+
+.speed-compass .q-top-right .quadrant-label {
+  color: #003087;
+}
+
+.speed-compass .q-bottom-right .quadrant-label {
+  color: #d50032;
+}
+
 .player-dot {
   position: absolute;
   width: 11px;
@@ -506,4 +568,87 @@ button:hover {
 
 button:active {
   transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+    max-width: 660px;
+  }
+}
+
+@media (max-width: 700px) {
+  .title {
+    font-size: 2.5em;
+    letter-spacing: 1px;
+  }
+
+  .filters {
+    padding: 14px 16px;
+  }
+
+  .filters input[type="text"],
+  .filters select {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .chart-section {
+    padding: 22px 12px 14px;
+  }
+
+  .chart-section-wide {
+    margin: 0 20px 40px;
+  }
+
+  .bar-chart {
+    gap: 8px;
+  }
+
+  .bar {
+    width: 36px;
+  }
+
+  .bar-label {
+    max-width: 44px;
+    font-size: 0.56em;
+  }
+
+  .bar-chart-dense .bar {
+    width: 30px;
+  }
+
+  .chart-section-wide .chart-scroll {
+    justify-content: flex-start;
+  }
+
+  .chart-section-wide .chart-scroll .bar-chart {
+    min-width: 760px;
+    width: auto;
+  }
+
+  .compass-section {
+    margin: 0 20px 40px;
+    padding: 20px 16px 16px;
+  }
+
+  .compass-axes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .compass-y-label {
+    writing-mode: horizontal-tb;
+    transform: none;
+    text-align: center;
+  }
+
+  .compass-plot {
+    height: 320px;
+  }
+
+  .section-title {
+    font-size: 1.25em;
+    margin-bottom: 18px;
+  }
 }
