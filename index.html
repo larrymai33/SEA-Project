@@ -33,6 +33,10 @@
         <option value="Texas Rangers">Texas Rangers</option>
         <option value="Toronto Blue Jays">Toronto Blue Jays</option>
       </select>
+      <button id="sort-btn-hr"  onclick="sortByHomeRuns()">Sort by HR</button>
+      <button id="sort-btn-rbi" onclick="sortByRBIs()">Sort by RBI</button>
+      <button id="sort-btn-sb"  onclick="sortBySBs()">Sort by SB</button>
+      <button id="sort-btn-avg" onclick="sortByAvgs()">Sort by AVG</button>
     </div>
 
     <div id="card-container"></div>
@@ -216,12 +220,6 @@
     </div><!-- end charts-grid -->
 
     <!-- ── Batter Compass ── -->
-    <!--
-      X axis = Batting Average (.240 left → .332 right)
-      Y axis = Home Runs (21 bottom → 58 top)
-      Each dot position: left = 5 + ((avg-0.240)/0.092)*90 %
-                         bottom = 5 + ((hr-21)/37)*90 %
-    -->
     <p class="section-title">Batter Compass</p>
     <div class="compass-section">
       <div class="compass-axes">
@@ -229,7 +227,6 @@
         <div class="compass-plot-wrap">
           <div class="compass-plot">
 
-            <!-- Quadrant tints + labels -->
             <div class="quadrant q-top-left">
               <div class="quadrant-label">Pure Power<br>High HR · Low AVG</div>
             </div>
@@ -243,27 +240,25 @@
               <div class="quadrant-label">Contact Hitters<br>Low HR · High AVG</div>
             </div>
 
-            <!-- Player dots: left=AVG position, bottom=HR position -->
-            <!-- left = 5 + ((avg-0.240)/0.092)*90,  bottom = 5 + ((hr-21)/37)*90 -->
-            <div class="player-dot" data-name="Aaron Judge"          style="left:85%; bottom:95%"></div>
-            <div class="player-dot" data-name="Shohei Ohtani"        style="left:74%; bottom:61%"></div>
-            <div class="player-dot" data-name="Bobby Witt Jr."       style="left:95%; bottom:32%"></div>
-            <div class="player-dot" data-name="Juan Soto"            style="left:52%; bottom:54%"></div>
-            <div class="player-dot" data-name="Jose Ramirez"         style="left:46%; bottom:49%"></div>
-            <div class="player-dot" data-name="Marcell Ozuna"        style="left:65%; bottom:49%"></div>
-            <div class="player-dot" data-name="Gunnar Henderson"     style="left:45%; bottom:44%"></div>
-            <div class="player-dot" data-name="Ketel Marte"          style="left:35%; bottom:42%"></div>
-            <div class="player-dot" data-name="Pete Alonso"          style="left:5%;  bottom:37%"></div>
-            <div class="player-dot" data-name="Teoscar Hernandez"    style="left:36%; bottom:34%"></div>
-            <div class="player-dot" data-name="Francisco Lindor"     style="left:37%; bottom:34%"></div>
-            <div class="player-dot" data-name="Willy Adames"         style="left:16%; bottom:32%"></div>
-            <div class="player-dot" data-name="Yordan Alvarez"       style="left:52%; bottom:29%"></div>
+            <div class="player-dot" data-name="Aaron Judge"           style="left:85%; bottom:95%"></div>
+            <div class="player-dot" data-name="Shohei Ohtani"         style="left:74%; bottom:61%"></div>
+            <div class="player-dot" data-name="Bobby Witt Jr."        style="left:95%; bottom:32%"></div>
+            <div class="player-dot" data-name="Juan Soto"             style="left:52%; bottom:54%"></div>
+            <div class="player-dot" data-name="Jose Ramirez"          style="left:46%; bottom:49%"></div>
+            <div class="player-dot" data-name="Marcell Ozuna"         style="left:65%; bottom:49%"></div>
+            <div class="player-dot" data-name="Gunnar Henderson"      style="left:45%; bottom:44%"></div>
+            <div class="player-dot" data-name="Ketel Marte"           style="left:35%; bottom:42%"></div>
+            <div class="player-dot" data-name="Pete Alonso"           style="left:5%;  bottom:37%"></div>
+            <div class="player-dot" data-name="Teoscar Hernandez"     style="left:36%; bottom:34%"></div>
+            <div class="player-dot" data-name="Francisco Lindor"      style="left:37%; bottom:34%"></div>
+            <div class="player-dot" data-name="Willy Adames"          style="left:16%; bottom:32%"></div>
+            <div class="player-dot" data-name="Yordan Alvarez"        style="left:52%; bottom:29%"></div>
             <div class="player-dot" data-name="Vladimir Guerrero Jr." style="left:86%; bottom:27%"></div>
-            <div class="player-dot" data-name="Bryce Harper"         style="left:54%; bottom:27%"></div>
-            <div class="player-dot" data-name="Julio Rodriguez"      style="left:33%; bottom:22%"></div>
-            <div class="player-dot" data-name="Corey Seager"         style="left:37%; bottom:12%"></div>
-            <div class="player-dot" data-name="Freddie Freeman"      style="left:46%; bottom:7%"></div>
-            <div class="player-dot" data-name="Jarren Duran"         style="left:49%; bottom:5%"></div>
+            <div class="player-dot" data-name="Bryce Harper"          style="left:54%; bottom:27%"></div>
+            <div class="player-dot" data-name="Julio Rodriguez"       style="left:33%; bottom:22%"></div>
+            <div class="player-dot" data-name="Corey Seager"          style="left:37%; bottom:12%"></div>
+            <div class="player-dot" data-name="Freddie Freeman"       style="left:46%; bottom:7%"></div>
+            <div class="player-dot" data-name="Jarren Duran"          style="left:49%; bottom:5%"></div>
 
           </div>
           <div class="compass-x-label">← Lower AVG &nbsp;|&nbsp; Higher AVG →</div>
@@ -271,11 +266,5 @@
       </div>
     </div>
 
-    <div class="footer">
-      <button id="sort-btn-hr"  onclick="sortByHomeRuns()">Sort by HR</button>
-      <button id="sort-btn-rbi" onclick="sortByRBIs()">Sort by RBI</button>
-      <button id="sort-btn-sb"  onclick="sortBySBs()">Sort by SB</button>
-      <button id="sort-btn-avg" onclick="sortByAvgs()">Sort by AVG</button>
-    </div>
   </body>
 </html>
