@@ -237,7 +237,10 @@ const players = [
 ];
 // Your final submission should have much more data than this, and
 // you should use more than just an array of strings to store it all.
-let sortAscending = false;
+let sortAscendingHr = false;
+let sortAscendingAvg = false;
+let sortAscendingSb = false;
+let sortAscendingRbi = false;
 // This function adds cards the page to display the data in the array
 function showCards(players) {
   const cardContainer = document.getElementById("card-container");
@@ -276,12 +279,7 @@ function editCardContent(card, player) {
 document.addEventListener("DOMContentLoaded", function () {
   showCards(players);
 });
-function quoteAlert() {
-  console.log("Button Clicked!");
-  alert(
-    "I guess I can kiss heaven goodbye, because it got to be a sin to look this good!",
-  );
-}
+
 
 function filterByTeam() {
   const selectedTeam = document.getElementById("team-filter").value;
@@ -299,17 +297,17 @@ function filterByTeam() {
 
   function sortByHomeRuns() {            
     //make copy of the list, then sort list   
-    sortAscending = !sortAscending                                                                                                                                                                                              
+    sortAscendingHr = !sortAscendingHr                                                                                                                                                                                              
                                                                                                                                                                                                                                        
     const sorted = [...players].sort(function (a, b) {                                                                                                                                                                                 
-      if (sortAscending) {
+      if (sortAscendingHr) {
         return a.homeRuns - b.homeRuns;
       } else {
         return b.homeRuns - a.homeRuns;
       }
     });
 
-    if (sortAscending) {
+    if (sortAscendingHr) {
       document.getElementById("sort-btn-hr").textContent = "Sort by HR: Most";
     } else {
       document.getElementById("sort-btn-hr").textContent = "Sort by HR: Least";
@@ -320,17 +318,17 @@ function filterByTeam() {
 
     function sortByRBIs() {            
     //make copy of the list, then sort list   
-    sortAscending = !sortAscending                                                                                                                                                                                              
+    sortAscendingRbi = !sortAscendingRbi                                                                                                                                                                                              
                                                                                                                                                                                                                                        
     const sorted = [...players].sort(function (a, b) {                                                                                                                                                                                 
-      if (sortAscending) {
+      if (sortAscendingRbi) {
         return a.rbi - b.rbi;
       } else {
         return b.rbi - a.rbi;
       }
     });
 
-    if (sortAscending) {
+    if (sortAscendingRbi) {
       document.getElementById("sort-btn-rbi").textContent = "Sort by RBI: Most";
     } else {
       document.getElementById("sort-btn-rbi").textContent = "Sort by RBI: Least";
@@ -341,17 +339,17 @@ function filterByTeam() {
 
       function sortBySBs() {            
     //make copy of the list, then sort list   
-    sortAscending = !sortAscending                                                                                                                                                                                              
+    sortAscendingSb = !sortAscendingSb                                                                                                                                                                                              
                                                                                                                                                                                                                                        
     const sorted = [...players].sort(function (a, b) {                                                                                                                                                                                 
-      if (sortAscending) {
+      if (sortAscendingSb) {
         return a.stolenBases - b.stolenBases;
       } else {
         return b.stolenBases - a.stolenBases;
       }
     });
 
-    if (sortAscending) {
+    if (sortAscendingSb) {
       document.getElementById("sort-btn-sb").textContent = "Sort by Stolen Bases: Most";
     } else {
       document.getElementById("sort-btn-sb").textContent = "Sort by Stolen Bases: Least";
@@ -363,17 +361,17 @@ function filterByTeam() {
 
         function sortByAvgs() {            
     //make copy of the list, then sort list   
-    sortAscending = !sortAscending                                                                                                                                                                                              
+    sortAscendingAvg = !sortAscendingAvg                                                                                                                                                                                              
                                                                                                                                                                                                                                        
     const sorted = [...players].sort(function (a, b) {                                                                                                                                                                                 
-      if (sortAscending) {
+      if (sortAscendingAvg) {
         return a.battingAvg - b.battingAvg;
       } else {
         return b.battingAvg - a.battingAvg;
       }
     });
 
-    if (sortAscending) {
+    if (sortAscendingAvg) {
       document.getElementById("sort-btn-avg").textContent = "Sort by Batting Average: Most";
     } else {
       document.getElementById("sort-btn-avg").textContent = "Sort by Batting Average: Least";
