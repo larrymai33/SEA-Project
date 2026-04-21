@@ -340,7 +340,6 @@ body {
   background: var(--compass-bg);
   border: 2px solid #003087;
   border-radius: 4px;
-  overflow: hidden;
   transition: background-color 0.3s;
 }
 
