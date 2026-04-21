@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
   <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
+    <title>MLB Players | Catalog</title>
+    <meta name="description" content="A Catalog of MLB Players" />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="scripts.js"></script>
   </head>
@@ -10,17 +10,34 @@
   <body>
     <header class="main-header">
       <h1 class="title">MLB Players</h1>
+      <p class="subtitle">2024 Season Stats</p>
     </header>
-   <div class="filters">
+
+    <div class="filters">
       <input type="text" id="search_input" placeholder="Search players..." oninput="searchPlayers()" />
-      <select id="team-filter" onchange="filterByTeam()">                                                                                                                                                                    
-       <option value="All">All Teams</option>
-       <option value="New York Yankees">New York Yankees</option>                                                                                                                                                           
-        <option value="Los Angeles Dodgers">Los Angeles Dodgers</option>                                                                                                                                                     
-       <option value="Kansas City Royals">Kansas City Royals</option>                                                                                                                                                       
-     </select>                                                                                                                                                                                                              
-    </div>     
+      <select id="team-filter" onchange="filterByTeam()">
+        <option value="All">All Teams</option>
+        <option value="Arizona Diamondbacks">Arizona Diamondbacks</option>
+        <option value="Atlanta Braves">Atlanta Braves</option>
+        <option value="Baltimore Orioles">Baltimore Orioles</option>
+        <option value="Boston Red Sox">Boston Red Sox</option>
+        <option value="Cleveland Guardians">Cleveland Guardians</option>
+        <option value="Houston Astros">Houston Astros</option>
+        <option value="Kansas City Royals">Kansas City Royals</option>
+        <option value="Los Angeles Dodgers">Los Angeles Dodgers</option>
+        <option value="Milwaukee Brewers">Milwaukee Brewers</option>
+        <option value="New York Mets">New York Mets</option>
+        <option value="New York Yankees">New York Yankees</option>
+        <option value="Philadelphia Phillies">Philadelphia Phillies</option>
+        <option value="Seattle Mariners">Seattle Mariners</option>
+        <option value="Texas Rangers">Texas Rangers</option>
+        <option value="Toronto Blue Jays">Toronto Blue Jays</option>
+      </select>
+    </div>
+
     <div id="card-container"></div>
+
+    <!-- Hidden template card -->
     <div class="card" style="display: none">
       <div class="card-content">
         <img src="" alt="Player headshot" />
@@ -35,10 +52,230 @@
         </div>
       </div>
     </div>
+
+    <!-- ── 2x2 Stat Charts ── -->
+    <p class="section-title" style="padding-top:10px;">Stat Leaders</p>
+    <div class="charts-grid">
+
+      <!-- Home Runs: max=58 (Judge), scale to 140px -->
+      <div class="chart-section">
+        <h3>Home Runs — Top 8</h3>
+        <div class="bar-chart">
+          <div class="bar-group">
+            <div class="bar" style="height:140px"><span class="bar-value">58</span></div>
+            <div class="bar-label">A. Judge</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:107px"><span class="bar-value">44</span></div>
+            <div class="bar-label">Ohtani</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:99px"><span class="bar-value">41</span></div>
+            <div class="bar-label">J. Soto</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:94px"><span class="bar-value">39</span></div>
+            <div class="bar-label">Ramirez</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:94px"><span class="bar-value">39</span></div>
+            <div class="bar-label">Ozuna</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:89px"><span class="bar-value">37</span></div>
+            <div class="bar-label">Henderson</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:87px"><span class="bar-value">36</span></div>
+            <div class="bar-label">K. Marte</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:82px"><span class="bar-value">34</span></div>
+            <div class="bar-label">Alonso</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RBI: max=144 (Judge), scale to 140px -->
+      <div class="chart-section">
+        <h3>RBI — Top 8</h3>
+        <div class="bar-chart">
+          <div class="bar-group">
+            <div class="bar" style="height:140px"><span class="bar-value">144</span></div>
+            <div class="bar-label">A. Judge</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:117px"><span class="bar-value">121</span></div>
+            <div class="bar-label">Ramirez</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:106px"><span class="bar-value">109</span></div>
+            <div class="bar-label">J. Soto</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:100px"><span class="bar-value">103</span></div>
+            <div class="bar-label">Guerrero</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:100px"><span class="bar-value">103</span></div>
+            <div class="bar-label">Ozuna</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:96px"><span class="bar-value">99</span></div>
+            <div class="bar-label">Witt Jr.</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:96px"><span class="bar-value">99</span></div>
+            <div class="bar-label">Alvarez</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:96px"><span class="bar-value">99</span></div>
+            <div class="bar-label">Henderson</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stolen Bases: max=59 (Ohtani), scale to 140px -->
+      <div class="chart-section">
+        <h3>Stolen Bases — Top 8</h3>
+        <div class="bar-chart">
+          <div class="bar-group">
+            <div class="bar" style="height:140px"><span class="bar-value">59</span></div>
+            <div class="bar-label">Ohtani</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:73px"><span class="bar-value">31</span></div>
+            <div class="bar-label">Witt Jr.</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:45px"><span class="bar-value">19</span></div>
+            <div class="bar-label">J. Rodriguez</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:40px"><span class="bar-value">17</span></div>
+            <div class="bar-label">Ramirez</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:38px"><span class="bar-value">16</span></div>
+            <div class="bar-label">Henderson</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:31px"><span class="bar-value">13</span></div>
+            <div class="bar-label">Duran</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:24px"><span class="bar-value">10</span></div>
+            <div class="bar-label">A. Judge</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:24px"><span class="bar-value">10</span></div>
+            <div class="bar-label">T. Hernandez</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Batting AVG: min=.240, max=.332, scaled to 140px range -->
+      <div class="chart-section">
+        <h3>Batting Average — Top 8</h3>
+        <div class="bar-chart">
+          <div class="bar-group">
+            <div class="bar" style="height:140px"><span class="bar-value">.332</span></div>
+            <div class="bar-label">Witt Jr.</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:126px"><span class="bar-value">.323</span></div>
+            <div class="bar-label">Guerrero</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:125px"><span class="bar-value">.322</span></div>
+            <div class="bar-label">A. Judge</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:107px"><span class="bar-value">.310</span></div>
+            <div class="bar-label">Ohtani</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:93px"><span class="bar-value">.301</span></div>
+            <div class="bar-label">Ozuna</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:76px"><span class="bar-value">.290</span></div>
+            <div class="bar-label">B. Harper</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:73px"><span class="bar-value">.288</span></div>
+            <div class="bar-label">J. Soto</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" style="height:73px"><span class="bar-value">.288</span></div>
+            <div class="bar-label">Alvarez</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end charts-grid -->
+
+    <!-- ── Batter Compass ── -->
+    <!--
+      X axis = Batting Average (.240 left → .332 right)
+      Y axis = Home Runs (21 bottom → 58 top)
+      Each dot position: left = 5 + ((avg-0.240)/0.092)*90 %
+                         bottom = 5 + ((hr-21)/37)*90 %
+    -->
+    <p class="section-title">Batter Compass</p>
+    <div class="compass-section">
+      <div class="compass-axes">
+        <div class="compass-y-label">← Fewer HR &nbsp; | &nbsp; More HR →</div>
+        <div class="compass-plot-wrap">
+          <div class="compass-plot">
+
+            <!-- Quadrant tints + labels -->
+            <div class="quadrant q-top-left">
+              <div class="quadrant-label">Pure Power<br>High HR · Low AVG</div>
+            </div>
+            <div class="quadrant q-top-right">
+              <div class="quadrant-label">Five-Tool Stars<br>High HR · High AVG</div>
+            </div>
+            <div class="quadrant q-bottom-left">
+              <div class="quadrant-label">Utility Players<br>Low HR · Low AVG</div>
+            </div>
+            <div class="quadrant q-bottom-right">
+              <div class="quadrant-label">Contact Hitters<br>Low HR · High AVG</div>
+            </div>
+
+            <!-- Player dots: left=AVG position, bottom=HR position -->
+            <!-- left = 5 + ((avg-0.240)/0.092)*90,  bottom = 5 + ((hr-21)/37)*90 -->
+            <div class="player-dot" data-name="Aaron Judge"          style="left:85%; bottom:95%"></div>
+            <div class="player-dot" data-name="Shohei Ohtani"        style="left:74%; bottom:61%"></div>
+            <div class="player-dot" data-name="Bobby Witt Jr."       style="left:95%; bottom:32%"></div>
+            <div class="player-dot" data-name="Juan Soto"            style="left:52%; bottom:54%"></div>
+            <div class="player-dot" data-name="Jose Ramirez"         style="left:46%; bottom:49%"></div>
+            <div class="player-dot" data-name="Marcell Ozuna"        style="left:65%; bottom:49%"></div>
+            <div class="player-dot" data-name="Gunnar Henderson"     style="left:45%; bottom:44%"></div>
+            <div class="player-dot" data-name="Ketel Marte"          style="left:35%; bottom:42%"></div>
+            <div class="player-dot" data-name="Pete Alonso"          style="left:5%;  bottom:37%"></div>
+            <div class="player-dot" data-name="Teoscar Hernandez"    style="left:36%; bottom:34%"></div>
+            <div class="player-dot" data-name="Francisco Lindor"     style="left:37%; bottom:34%"></div>
+            <div class="player-dot" data-name="Willy Adames"         style="left:16%; bottom:32%"></div>
+            <div class="player-dot" data-name="Yordan Alvarez"       style="left:52%; bottom:29%"></div>
+            <div class="player-dot" data-name="Vladimir Guerrero Jr." style="left:86%; bottom:27%"></div>
+            <div class="player-dot" data-name="Bryce Harper"         style="left:54%; bottom:27%"></div>
+            <div class="player-dot" data-name="Julio Rodriguez"      style="left:33%; bottom:22%"></div>
+            <div class="player-dot" data-name="Corey Seager"         style="left:37%; bottom:12%"></div>
+            <div class="player-dot" data-name="Freddie Freeman"      style="left:46%; bottom:7%"></div>
+            <div class="player-dot" data-name="Jarren Duran"         style="left:49%; bottom:5%"></div>
+
+          </div>
+          <div class="compass-x-label">← Lower AVG &nbsp;|&nbsp; Higher AVG →</div>
+        </div>
+      </div>
+    </div>
+
     <div class="footer">
-      <button onclick="quoteAlert()">Get A Quote!</button>
-      <button onclick="removeLastCard()">Remove A Card!</button>
-      <button id="sort-btn" onclick="sortByHomeRuns()">Sort by HR: Least</button>
+      <button id="sort-btn-hr"  onclick="sortByHomeRuns()">Sort by HR</button>
+      <button id="sort-btn-rbi" onclick="sortByRBIs()">Sort by RBI</button>
+      <button id="sort-btn-sb"  onclick="sortBySBs()">Sort by SB</button>
+      <button id="sort-btn-avg" onclick="sortByAvgs()">Sort by AVG</button>
     </div>
   </body>
 </html>
