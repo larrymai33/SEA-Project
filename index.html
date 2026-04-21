@@ -9,6 +9,7 @@
 
   <body>
     <header class="main-header">
+      <img class="mlb-logo" src="https://www.mlbstatic.com/team-logos/league-on-dark/1.svg" alt="MLB Logo" />
       <h1 class="title">MLB Players</h1>
       <p class="subtitle">2024 Season Stats</p>
     </header>
@@ -37,6 +38,7 @@
       <button id="sort-btn-rbi" onclick="sortByRBIs()">Sort by RBI</button>
       <button id="sort-btn-sb"  onclick="sortBySBs()">Sort by SB</button>
       <button id="sort-btn-avg" onclick="sortByAvgs()">Sort by AVG</button>
+      <button class="theme-toggle" onclick="document.documentElement.classList.toggle('dark')" title="Toggle dark mode">🌙</button>
     </div>
 
     <div id="card-container"></div>
